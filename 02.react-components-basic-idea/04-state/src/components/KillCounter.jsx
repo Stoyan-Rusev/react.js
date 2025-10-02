@@ -9,7 +9,7 @@ export default function KillCounter() {
         setCount(prev => prev + 1);
     }
     const decrementClickHandler = () => {
-        setCount(prev => prev + 1);
+        setCount(prev => prev - 1);
     }
     
     switch (count) {
@@ -44,3 +44,4 @@ export default function KillCounter() {
     );
 
 }
+
