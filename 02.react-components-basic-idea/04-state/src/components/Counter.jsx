@@ -4,7 +4,7 @@ export default function Counter() {
     let [count, increaseCount] = useState(0);
 
     const countClickHandler = () => {
-        increaseCount(count + 1);
+        increaseCount(prev => prev + 1);
     }
 
     return (
@@ -17,4 +17,5 @@ export default function Counter() {
             </div>
         </>
     );
+
 }
