@@ -6,10 +6,10 @@ export default function KillCounter() {
     let isMax = count == 9;
 
     const incrementClickHandler = () => {
-        setCount(count + 1);
+        setCount(prev => prev + 1);
     }
     const decrementClickHandler = () => {
-        setCount(count - 1);
+        setCount(prev => prev + 1);
     }
     
     switch (count) {
@@ -42,4 +42,5 @@ export default function KillCounter() {
             </div>
         </>
     );
+
 }
