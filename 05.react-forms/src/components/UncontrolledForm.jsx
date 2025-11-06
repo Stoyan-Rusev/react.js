@@ -1,19 +1,8 @@
 import { useState } from "react";
+import fakeFetch from "../services/userService";
 
 export default function UncontrolledForm() {
     const [pending, setPending] = useState(false);
-
-    const fakeFetch = (data) => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve({
-                    status: 200,
-                    message: 'success',
-                    data: data,
-                });
-            }, 1500);
-        });
-    };
 
     const formSubmit = async (e) => {
         e.preventDefault();
@@ -49,4 +38,5 @@ export default function UncontrolledForm() {
 
         </>
     );
+
 };
