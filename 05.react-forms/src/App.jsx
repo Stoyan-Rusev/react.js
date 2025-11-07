@@ -2,6 +2,7 @@ import './App.css'
 import ControlledForm from './components/ControlledForm'
 import UncontrolledForm from './components/UncontrolledForm.JSX'
 import UnifiedControlledForm from './components/UnifiedControlledForm'
+import UseRef from './components/UseRef'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <UncontrolledForm />
       <ControlledForm />
       <UnifiedControlledForm />
+      <UseRef />
     </>
   )
 }
