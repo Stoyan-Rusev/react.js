@@ -16,8 +16,9 @@ export default function UncontrolledFormRef() {
         const data = Object.fromEntries(formData.entries());
         const result = await fakeFetch(data);
 
-
         submitRef.current.disabled = false;
+
+        e.target.reset();
 
         console.log(result);
     };
@@ -48,4 +49,5 @@ function Submit({ ref }) {
             <input ref={ref} type="submit" value="Submit" />
         </div>
     );
+
 };
