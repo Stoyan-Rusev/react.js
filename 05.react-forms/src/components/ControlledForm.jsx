@@ -22,6 +22,8 @@ export default function ControlledForm() {
         console.log(result);
 
         setPending(false);
+        setUsername('');
+        setPassword('');
     }
 
     return (
@@ -41,4 +43,5 @@ export default function ControlledForm() {
             </form>
         </>
     );
+
 };
