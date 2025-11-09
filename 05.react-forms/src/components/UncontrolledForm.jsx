@@ -15,6 +15,9 @@ export default function UncontrolledForm() {
         const result = await fakeFetch(data);
 
         setPending(false);
+        
+        e.target.reset();
+        
         console.log(result);
     };
 
@@ -40,3 +43,4 @@ export default function UncontrolledForm() {
     );
 
 };
+
