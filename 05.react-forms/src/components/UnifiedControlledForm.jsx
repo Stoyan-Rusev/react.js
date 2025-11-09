@@ -18,6 +18,8 @@ export default function UnifiedControlledForm() {
 
         const result = await(fakeFetch(formData));
         setPending(false);
+        console.log(result);
+        setFormData({ username: '', password: '' })
     };
 
     return (
@@ -37,4 +39,5 @@ export default function UnifiedControlledForm() {
             </form>
         </>
     );
+
 };
