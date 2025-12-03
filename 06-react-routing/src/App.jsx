@@ -6,6 +6,7 @@ import { Route } from 'react-router'
 import Header from './components/Header'
 import Home from './components/Home'
 import Pricing from './components/Pricing'
+import NotFound from './components/NotFound'
 
 function App() {
     return (
@@ -14,7 +15,8 @@ function App() {
 
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='pricing/' element={<Pricing />}/>
+                <Route path='/pricing' element={<Pricing />}/>
+                <Route path='*' element={<NotFound />} />
             </Routes>
         </div>
     )

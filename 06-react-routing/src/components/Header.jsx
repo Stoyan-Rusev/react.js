@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
     { name: 'Home', path: '/' },
-    { name: 'Pricing', path: 'pricing/' },
+    { name: 'Pricing', path: '/pricing' },
     { name: 'Marketplace', path: '#' },
     { name: 'Company', path: '#' },
 ]
@@ -77,13 +77,13 @@ export default function Header() {
                             <div className="-my-6 divide-y divide-white/10">
                                 <div className="space-y-2 py-6">
                                     {navigation.map((item) => (
-                                        <a
+                                        <Link
                                             key={item.name}
-                                            href={item.href}
+                                            to={item.path}
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                                         >
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                                 <div className="py-6">
