@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Pricing from './components/Pricing'
 import NotFound from './components/NotFound'
 import Catalog from './components/Catalog'
+import ProductDetails from './components/ProductDetails'
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/catalog' element={<Catalog />} />
+                <Route path='/catalog/:id' element={<ProductDetails />}></Route>
                 <Route path='/pricing' element={<Pricing />}/>
                 <Route path='*' element={<NotFound />} />
             </Routes>
