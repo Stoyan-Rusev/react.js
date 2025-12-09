@@ -11,20 +11,20 @@ export default function ProductDetails() {
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(response => response.json())
-            .then(data => {setProduct(data); console.log(data);})
+            .then(data => { setProduct(data); console.log(data); })
             .catch(err => console.log(err));
     }, [id])
 
     return (
-        <div className="bg-gray-900 text-white">
+        <div className="bg-gray-900 text-white pt-20">
             <div className="pt-6">
 
-                {/* Image gallery */}
-                <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
+                {/* Image */}
+                <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8 flex justify-center">
                     <img
                         alt={product.title}
                         src={product.image}
-                        className="row-span-2 aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-3/4"
+                        className="max-h-[400px] w-auto object-contain sm:rounded-lg"
                     />
                 </div>
 
