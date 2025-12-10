@@ -11,7 +11,7 @@ export default function ProductDetails() {
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(response => response.json())
-            .then(data => { setProduct(data); console.log(data); })
+            .then(data => setProduct(data))
             .catch(err => console.log(err));
     }, [id])
 
