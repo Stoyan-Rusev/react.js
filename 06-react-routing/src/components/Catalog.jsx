@@ -45,7 +45,7 @@ export default function Catalog() {
         } else if (currentParams.price === 'desc') {
             setDisplayProducts([...products].sort((a, b) => b.price - a.price));
         } else if (currentParams.rating === 'asc') {
-            setDisplayProducts([...products].sort((a, b) => a.rating?.rate - b.rating?.rate));
+            setDisplayProducts([...products].sort((a, b) => b.rating?.rate - a.rating?.rate));
         } else {
             setDisplayProducts(products);
         };

@@ -2,8 +2,6 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
-const reviews = { href: '#', average: 4, totalCount: 117 }
-
 export default function ProductDetails() {
     const [product, setProduct] = useState({});
     const { id } = useParams();
@@ -13,6 +11,7 @@ export default function ProductDetails() {
             .then(response => response.json())
             .then(data => setProduct(data))
             .catch(err => console.log(err));
+
     }, [id])
 
     return (
@@ -44,18 +43,14 @@ export default function ProductDetails() {
                             <h3 className="sr-only">Reviews</h3>
                             <div className="flex items-center">
                                 <div className="flex items-center">
-                                    {[0, 1, 2, 3, 4].map((rating) => (
+                                    {[...Array(Math.round(product.rating?.rate || 0))].map((_, i) => (
                                         <StarIcon
-                                            key={rating}
+                                            key={i}
                                             aria-hidden="true"
                                             className="size-5 shrink-0"
                                         />
                                     ))}
                                 </div>
-                                <p className="sr-only">{reviews.average} out of 5 stars</p>
-                                <a href={reviews.href} className="ml-3 text-sm font-medium">
-                                    {reviews.totalCount} reviews
-                                </a>
                             </div>
                         </div>
 
