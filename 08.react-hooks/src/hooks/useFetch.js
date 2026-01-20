@@ -6,14 +6,19 @@ export function useFetch(url) {
 
     useEffect(() => {
         setPending(true);
+        const abortController = new AbortController();
 
-        fetch(url)
+        fetch(url, { signal: abortController.signal })
             .then(response => response.json())
             .then(data => {
                 setState(Object.values(data));
             })
             .catch(err => console.log(err))
             .finally(() => setPending(false));
+
+        return () => {
+            abortController.abort();
+        };
     }, [url]);
 
     return [pending, state];
